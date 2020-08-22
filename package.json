@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build"
+    "build": "gatsby build && netlify-lambda build functions",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build functions"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -12,5 +14,8 @@
     "gatsby": "^2.24.47",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^2.0.1"
   }
 }

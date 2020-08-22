@@ -14,6 +14,7 @@ export default () => {
     if (status != "loading") return;
 
     axios("/api/get-all-todos").then((result) => {
+      console.log('here', result.data)
       if (canceled === true) return;
 
       if (result.status !== 200) {

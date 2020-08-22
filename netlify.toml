@@ -1,7 +1,9 @@
 [build]
-  functions = "functions"
+  command = "yarn build"
+  functions = "functions-dist"
+  publish = "public"
 
 [[redirects]]
-  from = '/api/*'
-  status = 200
-  to = ".netlify/functions/:splat"
+    from = "/api/*"
+    to = "/.netlify/functions/:splat"
+    status = 200
