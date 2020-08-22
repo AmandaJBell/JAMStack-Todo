@@ -10,10 +10,14 @@ const TOGGLE_DONE = `
 `;
 
 exports.handler = async (event) => {
-    console.log('Error', event)
+  console.log("Error", event);
   const { id, text, completed } = JSON.parse(event.body);
-  const { data, errors } = await sendQuery(TOGGLE_DONE, { id, text, completed });
-    console.log('Error', data, errors)
+  const { data, errors } = await sendQuery(TOGGLE_DONE, {
+    id,
+    text,
+    completed,
+  });
+
   if (errors) {
     return {
       statusCode: 500,
